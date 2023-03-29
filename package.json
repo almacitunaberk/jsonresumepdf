@@ -16,8 +16,6 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonresume-theme-autumn": "^1.0.1",
-    "jsonresume-theme-caffeine": "^1.2.3",
-    "jsonresume-theme-elegant": "^1.16.1",
     "jsonresume-theme-eloquent-mod": "^4.24.0",
     "jsonresume-theme-kendall": "^0.2.0",
     "jsonresume-theme-stackoverflow": "^2.0.0",
