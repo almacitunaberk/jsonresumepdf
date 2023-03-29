@@ -3,11 +3,14 @@ const cors = require("express")
 const morgan = require("morgan")
 const resumeSchema = require("./resume_schema.js")
 const fs = require("fs").promises
-const execSync = require("child_process").execSync
 const { v4: uuidv4 } = require("uuid")
-const path = require("path")
-
+const exportResume = require("./resume-cli-master/lib/export-resume.js")
 require("dotenv").config()
+
+
+const path = require('path');
+const puppeteer = require('puppeteer');
+const btoa = require('btoa');
 
 const app = express()
 
@@ -35,7 +38,6 @@ app.post("/resume", async (req, res, next) => {
 
     // Parse the incoming req.body and create the new JSON template
     const body = req.body
-
     const resumeTemplate = {
         ...resumeSchema,
         basics: {
@@ -107,9 +109,9 @@ app.post("/resume", async (req, res, next) => {
                 }
             })
     }
-
     // Write to the resume.json
     const resumeJSON = JSON.stringify(resumeTemplate)
+
     await fs.writeFile("resume.json", resumeJSON, "utf8", (err) => {
         if (err) {
             console.log("Something went  wrong file writing the resume.json file")
@@ -119,25 +121,24 @@ app.post("/resume", async (req, res, next) => {
         }
     })
 
-
-    // Run the script to create the PDF
-
     // Name the file with a unique ID name
     const id = uuidv4()
     const pdfFileName = `${id}.pdf`
     console.log(pdfFileName)
-    const result = execSync(`resume export resumes/${pdfFileName} --theme=kendall`).toString()
-    const options = {
-        root: path.join(__dirname, "resumes")
-    }
-    res.sendFile(pdfFileName, options, (err) => {
+    const resumeJSONObj = JSON.parse(resumeJSON)
+    res.set("Content-Type", "application/pdf")
+    res.set("Content-Disposition", "attachment;filename=resume.pdf")
+    exportResume({
+        resume: resumeJSONObj,
+        fileName: pdfFileName,
+        theme: "jsonresume-theme-kendall",
+    }, (err, buff) => {
         if (err) {
-            console.log(`Error on sending the PDF file: ${err}`)
+            console.log("Error while creating the PDF")
         } else {
-            console.log("Successfully send the PDF file")
+            res.send(buff)
         }
     })
-
 })
 
 // Error Handling
