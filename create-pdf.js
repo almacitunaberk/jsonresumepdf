@@ -26,19 +26,14 @@ const getThemePkg = (theme) => {
 
 const createPdf = async (resumeJson, theme) => {
     const themePkg = getThemePkg(theme);
-    const puppeteerLaunchArgs = [];
-
-    if (process.env.RESUME_PUPPETEER_NO_SANDBOX) {
-        puppeteerLaunchArgs.push('--no-sandbox');
-    }
 
     const html = await renderHTML({
         resume: resumeJson,
         themePath: theme,
     });
-    const browser = await puppeteer.launch({
-        args: puppeteerLaunchArgs,
-    });
+
+    const browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
+
     const page = await browser.newPage();
 
     await page.emulateMediaType(

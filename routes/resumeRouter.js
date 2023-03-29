@@ -71,24 +71,6 @@ router.post("/eloquent-mod", async (req, res, next) => {
     }
 })
 
-router.post("/vp", async (req, res, next) => {
-    const resumeTemplate = populateResumeTemplate(req.body)
-    try {
-        res.set("Content-Type", "application/pdf")
-        res.set("Content-Disposition", "attachment;filename=resume.pdf")
-        try {
-            const pdf = await createPdf(resumeTemplate, "jsonresume-theme-vp")
-            res.send(pdf)
-        } catch (err) {
-            next(err)
-        }
-    } catch(err) {
-        console.log(`Error ocurred in Stackoverflow theme: ${err}`)
-        next(err)
-    }
-})
-
-
 router.post("/stackoverflow", async (req, res, next) => {
     const resumeTemplate = populateResumeTemplate(req.body)
     try {

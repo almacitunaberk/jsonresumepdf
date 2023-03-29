@@ -20,7 +20,6 @@
     "jsonresume-theme-kendall": "^0.2.0",
     "jsonresume-theme-stackoverflow": "^2.0.0",
     "jsonresume-theme-straightforward": "^0.2.0",
-    "jsonresume-theme-vp": "^1.1.0",
     "puppeteer": "^19.8.2",
     "uuid": "^9.0.0"
   },
