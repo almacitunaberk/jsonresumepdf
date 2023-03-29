@@ -1,0 +1,66 @@
+{
+    "personalDetails": {
+      "photo": " ",
+      "name": " Y. Yılmaz Erdoğmuş ",
+      "jobTitle": "",
+      "email": " yyerdogmus@gmail.com ",
+      "phone": " 81723621 ",
+      "address": " Levent, İstanbul ",
+      "birthday": "",
+      "personalStatement": "  "
+    },
+    "educationDetails": [
+      {
+        "type": "",
+        "schoolName": " Kocaeli University ",
+        "graduationDate": " 2023 ",
+        "details": ""
+      },
+     {
+        "type": " ",
+        "schoolName": " Marmaris High School ",
+        "graduationDate": " ",
+        "details": "Science"
+      }
+    ],
+    "employmentDetails": [
+      {
+        "status": "",
+        "position": " iOS Developer ",
+        "employer": " Neon Apps ",
+        "city": " İstanbul ",
+        "startDate": "",
+        "endDate": "",
+        "description": " When the aides on the night shift drift off to sleep, residents jump out of bed. Tiptoe down hallways to the recreation room. First one in hits the lights. Once long-limbed beauties, now crepe-paper skinned, they shimmy, they shake, they shimmer. Greta from 3B grabs Charles from 3K. The two mambo, Tito Puente in their heads. Edmond barely misses poor Edna’s toes. Shirley slides into a split. Oh! The days Deb danced like Ginger. When Tim crooned just like Frank. The days, the days, the years, the years. They dance. Then sleep like babies. Some of them never wake up. "
+      },
+      {
+        "status": "",
+        "position": " Software Engineer ",
+        "employer": " Global AI Hub ",
+        "city": " İstanbul ",
+        "startDate": " 2021 ",
+        "endDate": " 2022 ",
+        "description": ""
+      }
+    ],
+    "referenceDetails": [
+    ],
+    "certificateDetails": [
+    ],
+    "languageDetails": [
+      {
+        "level": "",
+        "language": " English "
+      }
+    ],
+    "hobby": [
+      {
+        "title": " Cinema "
+      }
+    ],
+    "skill": [
+      {
+        "title": " Swift "
+      }
+    ]
+  }

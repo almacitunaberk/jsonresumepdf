@@ -1,0 +1,27 @@
+{
+  "name": "json-resume-builder",
+  "version": "1.2.0",
+  "description": "JSON to Resume converter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Tunaberk Almaci",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "jsonresume-theme-elegant": "^1.16.1",
+    "jsonresume-theme-kendall": "^0.2.0",
+    "jsonresume-theme-stackoverflow": "^2.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.22",
+    "resume-cli": "^3.0.8",
+    "uuid": "^9.0.0"
+  }
+}
