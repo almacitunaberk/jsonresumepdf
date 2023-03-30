@@ -3,88 +3,33 @@ const populateResumeTemplate = require("../utils/populate-resume-template.js")
 const createPdf = require("../create-pdf.js")
 const router = express.Router()
 
-router.post("/kendall", async (req, res, next) => {
-    const resumeTemplate = populateResumeTemplate(req.body)
-    try {
-        res.set("Content-Type", "application/pdf")
-        res.set("Content-Disposition", "attachment;filename=resume.pdf")
-        try {
-            const pdf = await createPdf(resumeTemplate, "jsonresume-theme-kendall")
-            res.send(pdf)
-        } catch (err) {
-            next(err)
-        }
-    } catch(err) {
-        console.log(`Error ocurred in Kendall theme: ${err}`)
-        next(err)
-    }
-})
+const THEMES = ["kendall", "autumn", "straightforward",
+                "eloquent-mod", "stackoverflow", "flat", "srt",
+                "contempo", "fresh", "direct", "compact-extended",
+                "spartacus-prime", "slickoverflow", "moon", "el-santo",
+                "short"]
 
-router.post("/autumn", async (req, res, next) => {
-    const resumeTemplate = populateResumeTemplate(req.body)
-    try {
-        res.set("Content-Type", "application/pdf")
-        res.set("Content-Disposition", "attachment;filename=resume.pdf")
+router.post("/:theme", async (req, res, next) => {
+    let themePkgName = "jsonresume-theme-"
+    const theme = req.params.theme
+    if (!THEMES.includes(theme)) {
+        next()
+    } else {
+        themePkgName = themePkgName + theme
+        const resumeTemplate = populateResumeTemplate(req.body)
         try {
-            const pdf = await createPdf(resumeTemplate, "jsonresume-theme-autumn")
-            res.send(pdf)
-        } catch (err) {
+            res.set("Content-Type", "application/pdf")
+            res.set("Content-Disposition", "attachment;filename=resume.pdf")
+            try {
+                const pdf = await createPdf(resumeTemplate, themePkgName)
+                res.send(pdf)
+            } catch (err) {
+                next(err)
+            }
+        } catch(err) {
+            console.log(`Error ocurred in Kendall theme: ${err}`)
             next(err)
         }
-    } catch(err) {
-        console.log(`Error ocurred in Kendall theme: ${err}`)
-        next(err)
-    }
-})
-
-router.post("/straightforward", async (req, res, next) => {
-    const resumeTemplate = populateResumeTemplate(req.body)
-    try {
-        res.set("Content-Type", "application/pdf")
-        res.set("Content-Disposition", "attachment;filename=resume.pdf")
-        try {
-            const pdf = await createPdf(resumeTemplate, "jsonresume-theme-straightforward")
-            res.send(pdf)
-        } catch (err) {
-            next(err)
-        }
-    } catch(err) {
-        console.log(`Error ocurred in Stackoverflow theme: ${err}`)
-        next(err)
-    }
-})
-
-router.post("/eloquent-mod", async (req, res, next) => {
-    const resumeTemplate = populateResumeTemplate(req.body)
-    try {
-        res.set("Content-Type", "application/pdf")
-        res.set("Content-Disposition", "attachment;filename=resume.pdf")
-        try {
-            const pdf = await createPdf(resumeTemplate, "jsonresume-theme-eloquent-mod")
-            res.send(pdf)
-        } catch (err) {
-            next(err)
-        }
-    } catch(err) {
-        console.log(`Error ocurred in Stackoverflow theme: ${err}`)
-        next(err)
-    }
-})
-
-router.post("/stackoverflow", async (req, res, next) => {
-    const resumeTemplate = populateResumeTemplate(req.body)
-    try {
-        res.set("Content-Type", "application/pdf")
-        res.set("Content-Disposition", "attachment;filename=resume.pdf")
-        try {
-            const pdf = await createPdf(resumeTemplate, "jsonresume-theme-stackoverflow")
-            res.send(pdf)
-        } catch (err) {
-            next(err)
-        }
-    } catch(err) {
-        console.log(`Error ocurred in Stackoverflow theme: ${err}`)
-        next(err)
     }
 })
 
