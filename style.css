@@ -96,6 +96,8 @@ blockquote {
   position: relative;
   padding: 1em 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
 }
 #awards:before,
 #education:before {
@@ -116,11 +118,14 @@ blockquote {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
 }
 #awards li,
-#education li{
+#education li {
   width: 100%;
   z-index: 2;
   position: relative;
   float: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 #awards .year,
 #education .year{
@@ -134,6 +139,7 @@ blockquote {
 #education .description{
   width: 83%;
   display: inline-block;
+  min-height: 100%;
   background: #eee;
   margin-bottom: 10px;
   position: relative;
@@ -220,6 +226,9 @@ blockquote {
 .contact-item{
   width: 100%;
   float: left;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 .contact-item .icon{
   padding: 10px;

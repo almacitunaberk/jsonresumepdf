@@ -15,11 +15,12 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "puppeteer": "^19.8.2",
-    "uuid": "^9.0.0",
     "gravatar": "^1.0.6",
     "lodash": "^4.17.20",
-    "mustache": "^2.2.1"
+    "moment": "^2.29.4",
+    "mustache": "^2.2.1",
+    "puppeteer": "^19.8.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

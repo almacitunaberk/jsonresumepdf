@@ -2,37 +2,21 @@ var fs = require('fs');
 var _ = require('lodash');
 var gravatar = require('gravatar');
 var Mustache = require('mustache');
+var moment = require("moment")
 
 var d = new Date();
 var curyear = d.getFullYear();
 
-function getMonth(startDateStr) {
-    switch (startDateStr.substr(5,2)) {
-    case '01':
-        return "January ";
-    case '02':
-        return "February ";
-    case '03':
-        return "March ";
-    case '04':
-        return "April ";
-    case '05':
-        return "May ";
-    case '06':
-        return "June ";
-    case '07':
-        return "July ";
-    case '08':
-        return "August ";
-    case '09':
-        return "September ";
-    case '10':
-        return "October ";
-    case '11':
-        return "November ";
-    case '12':
-        return "December ";
-    }
+const getYear = (dateStr) => {
+    return moment(dateStr).format("YYYY")
+}
+
+const getFullMonth = (dateStr) => {
+    return moment(dateStr).format("MMMM")
+}
+
+const getAbrMonth = (dateStr) => {
+    return moment(dateStr).format("MMM")
 }
 
 function render(resumeObject) {
@@ -107,13 +91,17 @@ function render(resumeObject) {
         resumeObject.workBool = true;
         _.each(resumeObject.work, function(w){
             if (w.startDate) {
-                w.startDateYear = (w.startDate || "").substr(0,4);
-                w.startDateMonth = getMonth(w.startDate || "");
+                w.startDateYear = getYear(w.startDate)
+                //w.startDateYear = (w.startDate || "").substr(0,4);
+                w.startDateMonth = getFullMonth(w.startDate)
+                //w.startDateMonth = getMonth(w.startDate || "");
 
             }
             if(w.endDate) {
-                w.endDateYear = (w.endDate || "").substr(0,4);
-                w.endDateMonth = getMonth(w.endDate || "");
+                w.endDateYear = getYear(w.endDate)
+                //w.endDateYear = (w.endDate || "").substr(0,4);
+                w.endDateMonth = getFullMonth(w.endDate)
+                //w.endDateMonth = getMonth(w.endDate || "");
             } else {
                 w.endDateYear = 'Present'
             }
@@ -131,13 +119,16 @@ function render(resumeObject) {
         resumeObject.volunteerBool = true;
         _.each(resumeObject.volunteer, function(w){
             if (w.startDate) {
-                w.startDateYear = (w.startDate || "").substr(0,4);
-                w.startDateMonth = getMonth(w.startDate || "");
-
+                w.startDateYear = getYear(w.startDate)
+                w.startDateMonth = getFullMonth(w.startDate)
+                //w.startDateYear = (w.startDate || "").substr(0,4);
+                //w.startDateMonth = getMonth(w.startDate || "");
             }
             if(w.endDate) {
-                w.endDateYear = (w.endDate || "").substr(0,4);
-                w.endDateMonth = getMonth(w.endDate || "");
+                //w.endDateYear = (w.endDate || "").substr(0,4);
+                //w.endDateMonth = getMonth(w.endDate || "");
+                w.endDateYear = getYear(w.endDate)
+                w.endDateMonth = getFullMonth(w.endDate)
             } else {
                 w.endDateYear = 'Present'
             }
@@ -167,16 +158,19 @@ function render(resumeObject) {
                   e.educationDetail = e.area + ", "+ e.studyType;
                 }
                 if (e.startDate) {
-                    e.startDateYear = e.startDate.substr(0,4);
-                    e.startDateMonth = getMonth(e.startDate || "");
+                    e.startDateYear = getYear(e.startDate)
+                    e.startDateMonth = getFullMonth(e.startDate)
+                    //e.startDateYear = e.startDate.substr(0,4);
+                    //e.startDateMonth = getMonth(e.startDate || "");
                 } else {
                     e.endDateMonth = "";
                 }
                 if (e.endDate) {
-                    e.endDateYear = e.endDate.substr(0,4);
-                    e.endDateMonth = getMonth(e.endDate || "")
-
-                    if (e.endDateYear > curyear) {
+                    e.endDateYear = getYear(e.endDate)
+                    e.endDateMonth = getFullMonth(e.endDate)
+                    //e.endDateYear = e.endDate.substr(0,4);
+                    //e.endDateMonth = getMonth(e.endDate || "")
+                    if (Number(e.endDateYear) > curyear) {
                         e.endDateYear += " (expected)";
                     }
                 } else {
@@ -198,9 +192,11 @@ function render(resumeObject) {
         if (resumeObject.awards[0].title) {
             resumeObject.awardsBool = true;
             _.each(resumeObject.awards, function(a){
-                a.year = (a.date || "").substr(0,4);
-                a.day = (a.date || "").substr(8,2);
-                a.month = getMonth(a.date || "");
+                a.year = getYear(a.date)
+                a.month = getFullMonth(a.date)
+                //a.year = (a.date || "").substr(0,4);
+                //a.day = (a.date || "").substr(8,2);
+                //a.month = getMonth(a.date || "");
             });
         }
     }
@@ -209,9 +205,11 @@ function render(resumeObject) {
         if (resumeObject.publications[0].name) {
             resumeObject.publicationsBool = true;
             _.each(resumeObject.publications, function(a){
-                a.year = (a.releaseDate || "").substr(0,4);
-                a.day = (a.releaseDate || "").substr(8,2);
-                a.month = getMonth(a.releaseDate || "");
+                a.year = getYear(a.releaseDate)
+                a.month = getFullMonth(a.releaseDate)
+                //a.year = (a.releaseDate || "").substr(0,4);
+                //a.day = (a.releaseDate || "").substr(8,2);
+                //a.month = getMonth(a.releaseDate || "");
             });
         }
     }
