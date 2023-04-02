@@ -12,7 +12,7 @@ const populateResumeTemplate = (body) => {
                 address: body.personalDetails.address
             },
             image: body.personalDetails.photo,
-            summary: body.personalDetails.birthday
+            summary: body.personalDetails.personalStatement
         },
         education: body.educationDetails.length !== 0 && body.educationDetails.map(detail => {
             return {

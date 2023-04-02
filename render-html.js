@@ -1,3 +1,6 @@
+const { render } = require("./kendall_render.js")
+
+/*
 const tryResolve = (...args) => {
     try {
       return require.resolve(...args);
@@ -6,7 +9,10 @@ const tryResolve = (...args) => {
     }
   };
 
-  module.exports = (async ({ resume, themePath }) => {
+*/
+
+  module.exports = (async ({ resume }) => {
+    /*
     const cwd = process.cwd();
     let path;
     if (themePath[0] === '.') {
@@ -32,6 +38,6 @@ const tryResolve = (...args) => {
     if (typeof theme?.render !== 'function') {
       throw new Error('theme.render is not a function');
     }
-
-    return theme.render(resume);
+    */
+    return render(resume);
   });
