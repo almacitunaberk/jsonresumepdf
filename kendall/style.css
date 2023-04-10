@@ -12,13 +12,13 @@ body {
   font-weight: 400;
   color: #363636;
   background: #334960;
-  width: 100vw;
+  min-width: 100vw;
 }
 blockquote {
   font-size: 1em;
 }
 
-.container{
+.container {
   margin-top: 80px;
   margin-bottom: 15px;
   background: #fff;
