@@ -1,0 +1,202 @@
+body {
+    background: #EEEEEE;
+    font: 12px "Arial", Arial, sans-serif;
+    line-height: 1.4;
+    margin: 0 0;
+}
+
+
+ul {
+    margin-bottom: 0;
+}
+
+li {
+    margin-bottom: 2px;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.summary {
+    text-indent: 40px;
+}
+
+#resume {
+    padding: 1cm;
+    margin: 0 auto;
+    min-width: 100vw;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 4px #aaa;
+    -webkit-box-shadow: 2px 2px 4px #aaa;
+    overflow-x: scroll;
+}
+
+.basics {
+    font-size: 20px;
+}
+
+.basics .name {
+    float: left;
+    text-align: left;
+    font-weight: bolder;
+}
+
+.basics .label {
+    float: right;
+    text-align: right;
+    font-weight: lighter;
+}
+
+.sectionBlock {
+    display: flex;
+    width: 100%;
+}
+
+.sectionName {
+    width: 16%;
+    vertical-align: top;
+    display: inline-block;
+    background: gray;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+.blockHeader {
+    min-width: 100vw;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+.skills_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.skill_item:not(:last-of-type)::after {
+    content: "-";
+    display: inline-block;
+    position: relative;
+    margin-left: 1rem;
+}
+
+.sectionContent ul {
+    padding-left: 20px;
+    margin-top: 6px;
+    list-style-type: disc;
+}
+
+.sectionContent .sectionName {
+    width: 100%;
+    vertical-align: center;
+    background-color: lightgray;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.sectionContent .company {
+    font-size: large;
+    font-weight: bold;
+}
+
+
+.sectionContent .experience {
+    float: right;
+    font-weight: lighter;
+    color: gray;
+}
+
+.sectionContent .date {
+    float: right;
+    font-family: "PT Mono";
+}
+
+.sectionContent .duration {
+    float: right;
+    font-family: "PT Mono";
+    font-weight: lighter;
+    color: gray;
+}
+
+.sectionContent .separator {
+    height: 14px;
+}
+
+.sectionLine {
+    border-style: dashed;
+    border-width: 1px;
+    border-color: #CFCFCF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sectionBlock {
+    margin-bottom: 4px;
+}
+
+.jobBlock {
+    page-break-inside: avoid;
+}
+
+.references_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.reference_item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.reference_break {
+    width: 2px;
+    min-height: 100%;
+    background: #000;
+    margin-left: 1rem;
+    position: relative;
+}
+
+.reference_name {
+    font-weight: bold;
+}
+
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+
+    #resume {
+        padding: 0 0;
+        border: 0;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        max-height: 100%;
+        overflow-x: visible;
+    }
+
+    .pagebreak {
+        page-break-before: always;
+    }
+}
+
+@page {
+    size: letter;
+}

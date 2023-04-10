@@ -1,0 +1,10 @@
+{{#if resume.interests.length}}
+<section id="interests" class="item">
+	<h2><i class="fa fa-star left"></i> INTERESTS</h2>
+	<div class="interests_container">
+	{{#each resume.interests}}
+	<span class="interests_item">{{name}}</span>
+	{{/each}}
+	</div>
+</section>
+{{/if}}

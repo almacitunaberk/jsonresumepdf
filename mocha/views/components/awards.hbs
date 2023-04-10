@@ -1,0 +1,36 @@
+{{#if resume.certificates.length}}
+<div class="container awards-container">
+    {{> title value="Certificates" icon="fas fa-award"}}
+
+    {{#each resume.certificates}}
+        <section class="item">
+            <div class="section-header clearfix">
+                {{#if name}}
+                <h3 class="bold pull-left">
+                    {{#if website}}
+                        <a href="{{website}}" target="_blank">
+                            {{name}} <i class="fa fa-external-link" aria-hidden="true"></i>
+                        </a>
+                    {{else}}
+                        {{name}}
+                    {{/if}}
+                </h3>
+                {{/if}}
+                <h5 class="italic pull-right">
+                    {{#if date}}
+                        {{formatDate date}}
+                    {{/if}}
+                </h5>
+            </div>
+
+            {{#if issuer}}
+            <h5 class="awarder">{{issuer}}</h5>
+            {{/if}}
+
+            {{#if summary}}
+            <p class="summary">{{summary}}</p>
+            {{/if}}
+        </section>
+    {{/each}}
+</div>
+{{/if}}

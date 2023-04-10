@@ -1,0 +1,10 @@
+{{#if href.length}}
+  <a
+    class="{{class}} {{aClass}}"
+    href="{{href}}"
+    {{#if rel }}rel="{{rel}}"{{/if}}
+    {{#if property }}property="{{property}}"{{/if}}
+  >{{title}}</a>
+{{else}}
+  <span class="{{class}} {{spanClass}}">{{title}}</span>
+{{/if}}

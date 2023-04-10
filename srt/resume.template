@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>{{resume.basics.name}} | {{resume.basics.label}} | {{resume.basics.website}}</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" />
+	<style>
+	{{css}}
+	</style>
+</head>
+<body>
+
+<div id="doc2" class="yui-t7">
+	<div id="inner">
+		<div id="hd">
+			<div class="yui-gc">
+				<div class="yui-u first">
+					<h1>{{resume.basics.name}}</h1>
+					<h2>{{resume.basics.label}}</h2>
+				</div>
+
+				<div class="yui-u">
+					<div class="contact-info">
+						<h3><a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a></h3>
+						<h3>{{resume.basics.phone}}</h3>
+					</div><!--// .contact-info -->
+				</div>
+			</div><!--// .yui-gc -->
+		</div><!--// hd -->
+
+		<div id="bd">
+			<div id="yui-main">
+				<div class="yui-b">
+
+					<div class="yui-gf">
+						{{#if resume.basics.summary}}
+						<div class="yui-u first">
+							<h2>Profile</h2>
+						</div>
+						<div class="yui-u">
+							<p class="enlarge">
+								{{resume.basics.summary}}
+							</p>
+						{{/if}}
+						</div>
+					</div><!--// .yui-gf -->
+
+
+					<div class="yui-gf" id="skills">
+						{{#if resume.skills.length}}
+						<div class="yui-u first">
+							<h2>Skills</h2>
+						</div>
+						<div class="yui-u">
+							    {{#each resume.skills}}
+								<div class="talent">
+								        {{#name}}
+									<h2>{{.}}</h2>
+								        {{/name}}
+							                {{#if keywords.length}}
+							                {{#keywords}}
+									<p>{{.}}</p>
+							                {{/keywords}}
+						              	        {{/if}}
+								</div>
+							    {{/each}}
+						</div>
+						{{/if}}
+					</div><!--// .yui-gf -->
+
+					{{#if resume.work.length}}
+					<div class="yui-gf" id="work">
+						<div class="yui-u first">
+							<h2>Experience</h2>
+						</div><!--// .yui-u -->
+
+						<div class="yui-u">
+							{{#each resume.work}}
+							{{#if @last}}
+							<div class="job last">
+							{{else}}
+							<div class="job">
+							{{/if}}
+								<h2>{{company}}</h2>
+								<h3>{{position}}</h3>
+								<h4>{{startDate}} to
+								{{#if endDate}}
+                                                                {{endDate}}
+								{{^}}
+								Present
+								{{/if}}</h4>
+								<p>{{summary}}<br>
+							        {{#each highlights}}
+								&bull; {{.}}<br>
+							        {{/each}}</p>
+							</div>
+							{{/each}}
+						</div><!--// .yui-u -->
+					</div><!--// .yui-gf -->
+					{{/if}}
+
+					<div class="yui-gf" id="interests">
+						{{#if resume.interests.length}}
+						<div class="yui-u first">
+							<h2>Interests</h2>
+						</div>
+						<div class="yui-u">
+							    {{#each resume.interests}}
+								<div class="talent">
+								        {{#name}}
+									<h2>{{.}}</h2>
+								        {{/name}}
+								</div>
+							    {{/each}}
+						</div>
+						{{/if}}
+					</div><!--// .yui-gf -->
+
+					<div class="yui-gf" id="languages">
+						{{#if resume.languages.length}}
+						<div class="yui-u first">
+							<h2>Languages</h2>
+						</div>
+						<div class="yui-u">
+							    {{#each resume.languages}}
+								<div class="talent">
+								        {{#language}}
+									<h2>{{.}}</h2>
+								        {{/language}}
+							                {{#fluency}}
+									<p>{{.}}</p>
+							                {{/fluency}}
+								</div>
+							    {{/each}}
+						</div>
+						{{/if}}
+					</div><!--// .yui-gf -->
+
+					{{#if resume.education}}
+					<div class="yui-gf" id="education">
+						<div class="yui-u first">
+							<h2>Education</h2>
+						</div>
+						{{#each resume.education}}
+						<div class="yui-u">
+							<h2>{{institution}}</h2>
+							<h3>{{area}}, {{studyType}}
+                                                        {{#if gpa}}
+                                                        &mdash; <strong>{{gpa}}</strong>
+                                                        {{/if}}
+                                                        </h3>
+							{{#each courses}}
+							<h4>&bull; {{.}}</h4>
+							{{/each}}
+							<br>
+						</div>
+						{{/each}}
+					</div><!--// .yui-gf -->
+					{{/if}}
+					{{#if resume.certificates.length}}
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Certificates</h2>
+						</div><!--// .yui-u -->
+
+						<div class="yui-u" id="certificates">
+							{{#each resume.certificates}}
+							{{#if @last}}
+							<div class="job last">
+							{{else}}
+							<div class="job">
+							{{/if}}
+								<h2>{{name}}</h2>
+								<h3>{{issuer}}</h3>
+								<h4>{{date}}
+							</div>
+							{{/each}}
+						</div><!--// .yui-u -->
+					</div><!--// .yui-gf -->
+					{{/if}}
+
+					{{#if resume.references.length}}
+					<div class="yui-gf last" id="references">
+						<div class="yui-u first">
+							<h2>References</h2>
+						</div>
+						<div class="yui-u">
+							    {{#each resume.references}}
+								<div class="talent">
+								        {{#name}}
+									<h2>{{.}}</h2>
+								        {{/name}}
+							                {{#reference}}
+									<p>{{.}}</p>
+							                {{/reference}}
+								</div>
+							    {{/each}}
+						</div>
+					</div><!--// .yui-gf -->
+					{{/if}}
+				</div><!--// .yui-b -->
+			</div><!--// yui-main -->
+		</div><!--// bd -->
+
+		<div id="ft">
+			<p>{{resume.basics.name}} &mdash; <a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a> &mdash; {{resume.basics.phone}}</p>
+		</div><!--// footer -->
+	</div><!-- // inner -->
+</div><!--// doc -->
+</body>
+</html>

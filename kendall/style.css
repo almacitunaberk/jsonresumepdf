@@ -7,12 +7,12 @@
 @viewport           { width: device-width; }
 
 
-body{
+body {
   font-family: 'Open Sans', Arial, Tahoma;
   font-weight: 400;
   color: #363636;
   background: #334960;
-  padding: 20px;
+  width: 100vw;
 }
 blockquote {
   font-size: 1em;

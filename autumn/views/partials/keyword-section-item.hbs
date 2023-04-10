@@ -1,0 +1,12 @@
+<div class="mb-1 break-inside-avoid">
+  {{#if name}}
+    <h3 class="font-sm font-bold mb-1">{{name}}</h3>
+  {{/if}}
+  {{#if keywords.length}}
+    <div>
+      {{#each keywords}}
+        <span class="inline-block mr-1 mb-1 py-0.5 px-1 bg-orange-100 rounded text-orange-700">{{.}}</span>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

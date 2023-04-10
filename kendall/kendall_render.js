@@ -2,22 +2,10 @@ var fs = require('fs');
 var _ = require('lodash');
 var gravatar = require('gravatar');
 var Mustache = require('mustache');
-var moment = require("moment")
-
 var d = new Date();
 var curyear = d.getFullYear();
 
-const getYear = (dateStr) => {
-    return moment(dateStr).format("YYYY")
-}
-
-const getFullMonth = (dateStr) => {
-    return moment(dateStr).format("MMMM")
-}
-
-const getAbrMonth = (dateStr) => {
-    return moment(dateStr).format("MMM")
-}
+const { getFullMonth, getYear } = require("../utils/dateFormat.js")
 
 function render(resumeObject) {
 

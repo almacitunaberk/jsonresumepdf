@@ -1,0 +1,14 @@
+{{#if resume.references.length}}
+<section id="references">
+	<h2><i class="fa fa-thumbs-up left"></i> REFERENCES</h2>
+	<div class="references_container">
+	{{#each resume.references}}
+	<div class="item references_item">
+		<span class="reference_name">{{name}}</span>
+		<span class="reference_contact">{{reference}}</span>
+	</div>
+	<div class="references_break"></div>
+	{{/each}}
+	</div>
+</section>
+{{/if}}

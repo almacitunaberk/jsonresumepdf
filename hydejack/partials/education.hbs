@@ -1,0 +1,26 @@
+{{#if resume.education.length}}
+<section>
+  <h2 id="education" class="h3 faded hr">
+    Education
+    <span class="symbol icon-library"></span>
+  </h2>
+  {{#each resume.education}}
+  <section>
+    <header class="{{#unless @first}}mt1{{/unless}}">
+      {{#if endDate}}
+        <p class="faded">
+          <time datetime="{{endDate}}">{{formattedDate endDate}}</time>
+        </p>
+      {{/if}}
+      <h3 class="h4 faded" {{#if endDate.length }}property="alumniOf" typeof="EducationalOrganization"{{/if}}>
+        <span class="bc">{{studyType}}</span>
+        in
+        <span class="bc">{{area}}</span>
+        from
+        <span class="bc" {{#if endDate.length}}property="name"{{/if}}>{{institution}}</span>
+      </h3>
+    </header>
+  </section>
+  {{/each}}
+</section>
+{{/if}}

@@ -1,0 +1,39 @@
+{{#if resume.volunteer.length}}
+<section>
+  <h2 id="volunteer" class="h3 faded hr">
+    Volunteer
+    <span class="symbol icon-earth"></span>
+  </h2>
+  {{#each resume.volunteer}}
+  <section>
+    <header class="{{#unless @first}}mt3{{/unless}}">
+      {{#if startDate.length}}
+        <p class="faded">
+          <time datetime="{{startDate}}">{{formattedDate startDate}}</time>
+          –
+          {{#if endDate.length}}
+            <time datetime="{{endDate}}">{{formattedDate endDate}}</time>
+          {{else}}
+            <em>present</em>
+          {{/if}}
+        </p>
+      {{/if}}
+      <h3 class="h4 faded">
+        <span class="bc">{{position}}</span>
+        at
+        {{> link title=organization href=website spanClass="bc"}}
+      </h3>
+    </header>
+
+    {{> message text=summary alt=" "}}
+
+    <h4 class="sr-only">Highlights:</h4>
+    <ul>
+      {{#each highlights}}
+        <li>{{.}}</li>
+      {{/each}}
+    </ul>
+  </section>
+  {{/each}}
+</section>
+{{/if}}

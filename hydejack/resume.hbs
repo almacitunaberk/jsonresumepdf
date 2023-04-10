@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack <https://qwtel.com/hydejack/>
+-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="generator" content="Hydejack JSON Resume v{{version}}">
+    <title>{{resume.basics.name}}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700%7CNoto+Sans:400,400i,700,700i">
+    <link rel="stylesheet" href="https://qwtel.com/hydejack/assets/icomoon/style.css">
+    <style>{{{css}}}</style>
+  </head>
+  <body>
+    <hy-push-state>
+      <main id="_main" class="content fade-in layout-resume" role="main">
+        <article
+          id="resume"
+          class="page vcard h-card"
+          role="article"
+          vocab="http://schema.org/" typeof="Person"
+          >
+          {{> header }}
+
+          <div class="columns contact">
+            {{> basics }}
+            {{> profiles }}
+          </div>
+
+          <div class="columns">
+            <div class="column column-3-5">
+              {{> work }}
+              {{> volunteer }}
+              {{> education }}
+              {{> awards }}
+              {{> publications }}
+              {{> references }}
+            </div>
+            <div class="column column-2-5">
+              {{> languages }}
+              {{> skills }}
+              {{> interests }}
+            </div>
+          </div>
+        </article>
+        <footer role="contentinfo">
+          <hr/>
+          <p>
+            <small>
+              Powered by <a class="external" href="https://qwtel.com/hydejack/">Hydejack</a>
+            </small>
+          </p>
+          <hr class="sr-only"/>
+        </footer>
+      </main>
+      <hy-drawer>
+        <header id="_sidebar" class="sidebar" role="banner">
+          <div class="sidebar-bg sidebar-overlay" style="background-color:#4fb1ba;background-image:url(https://qwtel.com/hydejack/assets/img/sidebar-bg.jpg)"></div>
+        </header>
+      </hy-drawer>
+    </hy-push-state>
+  </body>
+</html>

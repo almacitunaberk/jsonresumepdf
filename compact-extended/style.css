@@ -1,0 +1,143 @@
+/* Resume styles */
+
+body {
+    font-size: 12px;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.name {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+
+.title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+.contact-info ul {
+    list-style-type: none;
+}
+
+.section-title {
+    font-size: 14px;
+}
+
+.skill {
+    font-weight: bold;
+}
+
+.skills-ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.skills-ul li {
+    float: left;
+    margin-right: 8px;
+}
+
+.company, .school {
+    font-size: 14px;
+}
+
+.company-position {
+
+}
+
+.company-summary {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.company-description {
+    margin-bottom: 0px;
+}
+
+.company-description ul {
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+.education-section {
+    margin-bottom: 5px;
+}
+
+.education-gpa {
+    padding-left: 2px;
+}
+
+.education-gpa-text {
+    padding-left: 4px;
+}
+
+
+
+.experience_content  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.education_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.certificates_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.interests_content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.interests_content .skill:not(:last-of-type)::after {
+    content: "-";
+    display: inline-block;
+    position: relative;
+    margin-left: 1rem;
+}
+
+.references_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.references_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.reference_break {
+    min-height: 100%;
+    width: 2px;
+    background-color: #000;
+}
+
+.references_name {
+    font-weight: bold;
+}

@@ -1,0 +1,15 @@
+{{#resume.basics}}
+{{#if profiles.length}}
+<dl class="column column-2-5">
+  {{#each profiles}}
+    <dt class="faded">
+      <span class="{{socialIcon network}}" title="{{socialName network}}"></span>
+      <span class="sr-only">{{socialName network}}</span>
+    </dt>
+    <dd class="bold">
+      {{> link href=url class="nickname p-nickname" title=username property="sameAs"}}
+    </dd>
+  {{/each}}
+</dl>
+{{/if}}
+{{/resume.basics}}

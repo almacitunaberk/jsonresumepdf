@@ -3,31 +3,12 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 const btoa = require('btoa');
 
-const getThemePkg = (theme) => {
-  if (theme[0] === '.') {
-    theme = path.join(process.cwd(), theme, 'index.js');
-  } else {
-    theme = path.join(process.cwd(), 'node_modules', theme, 'index.js');
-  }
-  try {
-    const themePkg = require(theme);
-    return themePkg;
-  } catch (err) {
-    // Theme not installed
-    console.log(
-      'You have to install this theme relative to the folder to use it e.g. `npm install ' +
-        theme +
-        '`',
-    );
-    process.exit();
-  }
-};
 
-
-const createPdf = async (resumeJson) => {
+const createPdf = async (resumeJson, theme) => {
 
     const html = await renderHTML({
         resume: resumeJson,
+        theme
     });
 
     const browser = await puppeteer.launch({

@@ -1,0 +1,26 @@
+{{#if resume.publications.length}}
+<section>
+  <h2 id="publications" class="h3 faded hr">
+    Publications
+    <span class="symbol icon-book"></span>
+  </h2>
+  {{#each resume.publications}}
+  <section>
+    <header class="{{#unless @first}}mt3{{/unless}}">
+      {{#if releaseDate.length}}
+        <p class="faded">
+          <time datetime="{{releaseDate}}">{{formattedDate releaseDate}}</time>
+        </p>
+      {{/if}}
+      <h3 class="h4 faded">
+        {{> link title=name href=website spanClass="bc"}}
+        by
+        <span class="bc">{{publisher}}</span>
+      </h3>
+    </header>
+
+    {{> message text=summary alt=" "}}
+  </section>
+ {{/each}}
+</section>
+{{/if}}

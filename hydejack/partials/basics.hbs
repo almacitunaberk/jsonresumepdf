@@ -1,0 +1,60 @@
+{{#resume.basics}}
+<dl class="column column-3-5">
+  {{#location}}
+    <dt class="faded">
+      <span class="icon-location" title="Location"></span>
+      <span class="sr-only">Location</span>
+    </dt>
+
+    <dd class="bold adr p-adr h-adr" property="address" typeof="PostalAddress">
+      {{#if address.length}}
+        <span class="street-address p-street-address" property="streetAddress">{{address}}</span>,
+      {{/if}}
+      {{#if postalCode.length}}
+        <span class="postal-code p-postal-code" property="postalCode">{{postalCode}}</span>,
+      {{/if}}
+      {{#if city.length}}
+        <span class="locality p-locality" property="addressLocality">{{city}}</span>,
+      {{/if}}
+      {{#if region.length}}
+        <span class="region p-region" property="addressRegion">{{region}}</span>,
+      {{/if}}
+      {{#if countryCode.length}}
+        <span class="country-name p-country-name" property="addressCountry">{{countryName countryCode}}</span>
+      {{/if}}
+    </dd>
+  {{/location}}
+
+  {{#if email.length}}
+    <dt class="faded">
+      <span class="icon-mail2" title="Email"></span>
+      <span class="sr-only">Email</span>
+    </dt>
+    <dd class="bold">
+      <meta property="email" content="{{email}}"/>
+      <a href="mailto:{{email}}" class="external email u-email">{{email}}</a>
+    </dd>
+  {{/if}}
+
+  {{#if phone.length}}
+    <dt class="faded">
+      <span class="icon-phone" title="Phone"></span>
+      <span class="sr-only">Phone</span>
+    </dt>
+    <dd class="bold">
+      <meta property="telephone" content="{{phone}}"/>
+      <a href="tel:{{stripWhiteSpace phone}}" class="external tel p-tel">{{phone}}</a>
+    </dd>
+  {{/if}}
+
+  {{#if website.length}}
+    <dt class="faded">
+      <span class="icon-home3" title="Website"></span>
+      <span class="sr-only">Website</span>
+    </dt>
+    <dd class="bold">
+      <a href="{{website}}" class="url u-url" property="sameAs">{{website}}</a>
+    </dd>
+  {{/if}}
+</dl>
+{{/resume.basics}}

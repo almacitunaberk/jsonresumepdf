@@ -1,0 +1,14 @@
+{{#if resume.interests.length}}
+<div class="no-break">
+    {{> title value="Interests" }}
+    <div class="interests-container">
+        {{#each resume.interests}}
+            <section class="container interests_item">
+                {{#if name}}
+                    {{name}}
+                {{/if}}
+            </section>
+        {{/each}}
+    </div>
+</div>
+{{/if}}

@@ -1,0 +1,11 @@
+{{#if text.length}}
+  {{#unless hide}}
+    <p class="message" {{#if property}}property="{{property}}"{{/if}}>
+      {{text}}
+    </p>
+  {{else}}
+    {{#if alt}}{{alt}}{{else}}<div class="hr pb0"></div>{{/if}}
+  {{/unless}}
+{{else}}
+  {{#if alt}}{{alt}}{{else}}<div class="hr pb0"></div>{{/if}}
+{{/if}}

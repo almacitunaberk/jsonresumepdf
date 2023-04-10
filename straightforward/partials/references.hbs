@@ -1,0 +1,16 @@
+{{#if resume.references.length}}
+  <div id='interests' class='section-block'>
+    <div class='section-intro'>
+      <div class='section-name'>
+        <span>REFERENCES</span>
+      </div>
+      <div class='section-intro-line'></div>
+    </div>
+    <div class='section-content' id="interests_list">
+        {{#each resume.references}}
+          <span class='title'>{{name}}: {{reference}}</span>
+        {{/each}}
+    </div>
+    <div class='section-line'></div>
+  </div>
+{{/if}}

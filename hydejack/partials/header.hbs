@@ -1,0 +1,22 @@
+{{#resume.basics}}
+<header class="hr">
+  <h1 class="page-title fn p-name" property="name">{{name}}</h1>
+
+  <img
+    src={{image}}
+    class="avatar photo u-photo personal_image"
+    alt="{{name}}"
+    property="image"
+  />
+
+  {{#if label.length}}
+    <p class="h3 faded subline title p-job-title" property="jobTitle">{{label}}</p>
+  {{/if}}
+</header>
+
+{{#if summary.length}}
+  <p class="note p-note" property="description">
+    {{summary}}
+  </p>
+{{/if}}
+{{/resume.basics}}

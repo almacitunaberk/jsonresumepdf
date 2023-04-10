@@ -1,0 +1,40 @@
+<%
+/**
+ * @typedef {object} Award
+ * @property {string} title Award title
+ * @property {string} date Award date
+ * @property {string} awarder Award awarder
+ * @property {string} summary Award summary
+ *
+ * [Section] Awards
+ * @param {array.<Award>} awards
+ */
+%>
+
+<% if (certificates && Array.isArray(certificates) && certificates.length > 0) { %>
+  <section id="awards" class="row no-break">
+    <aside class="col-sm-3">
+      <h3>Certificates</h3>
+    </aside>
+    <div class="col-sm-9">
+      <div class="row">
+        <% certificates.forEach((certificate) => { %>
+          <div class="col-sm-12">
+            <h4 class="strike-through">
+              <span><%= certificate.name %></span>
+            </h4>
+            <div class="date pull-right">
+              <em>Awarded</em>
+              <%= this.prettyDate(certificate.date) %>
+            </div>
+            <div>
+              <em>by</em>
+              <strong><%= certificate.issuer %></strong>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+<% } %>
+

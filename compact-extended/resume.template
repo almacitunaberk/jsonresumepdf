@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+      {{{css}}}
+    </style>
+  </head>
+  <body>
+
+    <!-- header -->
+    <div class="container-fluid">
+      {{#resume.basics}}
+      <div class="row">
+        <div class="col-xs-6">
+          <h1 class="name"> {{name}}</h1>
+          <h3 class="title">{{label}}</h3>
+        </div>
+        <div class="col-xs-6 contact-info">
+          <ul class="pull-right">
+            <li>{{email}}</li>
+            <li>{{phone}}</li>
+            <li>
+              {{#each profiles}}
+              <i class="fa fa-{{toLowerCase network}}"></i> {{username}}
+              {{/each}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr style="margin-top: 0;" />
+
+      <!-- Profile/summary -->
+      <div class="row">
+        <div class="col-xs-2">
+          <h4 class="section-title"> Profile </h4>
+        </div>
+        <div class="col-xs-10">
+          {{summary}}
+        </div>
+        {{/resume.basics}}
+      </div>
+      <hr />
+
+      <!-- Skills -->
+      {{#if resume.skills.length}}
+      <div class="row">
+        <div class="col-xs-2">
+          <h4 class="section-title"> Skills </h4>
+        </div>
+        <div class="col-xs-10 interests_content">
+          {{#each resume.skills}}
+          <span class="skill">{{name}}</span>
+          {{#each keywords}}
+          {{#if @last}}
+          {{this}}
+          {{else}}
+          {{this}},
+          {{/if}}
+          {{/each}}
+          {{/each}}
+        </div>
+      </div>
+      <hr />
+      {{/if}}
+
+      <!-- Experience -->
+      {{#if resume.work.length}}
+      <div class="row">
+        <div class="col-xs-2">
+          <h4 class="section-title"> Experience </h4>
+        </div>
+        <div class="experience_container">
+          {{#each resume.work}}
+          <div class="experience_content">
+            <div class="experience_name-position">
+              <div class="company"> {{name}} </div>
+              <div class="company-position"><em>{{position}}</em></div>
+            </div>
+            <div class="experience_date">
+              <span class="pull-right"> {{prettifyDate startDate}} -
+                {{prettifyDate endDate}} </span>
+            </div>
+          </div>
+          <div class="row company-description">
+            <div class="col-xs-12">
+              <ul>
+                <li class="company-summary">{{summary}}</li>
+                {{#each highlights}}
+                <li><i class="fa fa-chevron-circle-right"></i> {{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <hr />
+      {{/if}}
+
+      <!-- Education -->
+      {{#if resume.education.length}}
+      <div class="row">
+        <div class="col-xs-2">
+          <h4 class="section-title"> Education </h4>
+        </div>
+        <div class="col-xs-10">
+          {{#each resume.education}}
+          <div class="row education-section education_content">
+            <div class="col-xs-10">
+              <div class="school"> {{institution}} </div>
+              <i class="fa fa-graduation-cap"></i> <span>{{studyType}} in {{area}}</span>
+              {{#if gpa}}
+              <div class="education-gpa">
+                <i class="fa fa-paperclip"></i> <span style="padding-left: 5px">{{gpa}}</span>
+              </div>
+              {{/if}}
+            </div>
+            <div class="col-xs-2 education-date">
+              <div class="pull-right">
+                {{prettifyDate endDate}}
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <hr />
+      {{/if}}
+
+      <!-- Interests -->
+      {{#if resume.interests.length}}
+      <div class="row">
+        <div class="col-xs-2">
+          <h4 class="section-title"> Interests </h4>
+        </div>
+        <div class="col-xs-10 interests_content">
+          {{#each resume.interests}}
+          <span class="skill">{{name}}</span>
+          {{#each keywords}}
+          {{#if @last}}
+          {{this}}
+          {{else}}
+          {{this}},
+          {{/if}}
+          {{/each}}
+          {{/each}}
+        </div>
+      </div>
+      <hr />
+      {{/if}}
+
+      <!-- Publications -->
+      {{#if resume.certificates.length}}
+      <div class="row">
+        <div class="col-xs-2">
+          <h4 class="section-title">Certificates</h4>
+        </div>
+        <div class="col-xs-10">
+          {{#each resume.certificates}}
+          <div class="certificates_content">
+            <div class="certificates_name-issuer">
+              <div class="company"> {{name}} </div>
+              <div class="company-position"><em>{{issuer}}</em></div>
+            </div>
+            <div class="certificates_date">
+              <span class="pull-right"> {{date}} </span>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <hr />
+      {{/if}}
+
+      {{#if resume.references.length}}
+      <div class="row">
+        <div class="col-xs-2">
+          <h4 class="section-title">References</h4>
+        </div>
+        <div class="col-xs-10 references_container">
+          {{#each resume.references}}
+          <div class="references_content">
+            <span class="references_name">{{name}}</span>
+            <span class="references_reference">{{reference}}</span>
+          </div>
+          {{#if @last}}
+          {{else}}
+          <div class="reference_break"></div>
+          {{/if}}
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+    </div>    <!-- /end container-fluid -->
+  </body>
+</html>

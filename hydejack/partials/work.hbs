@@ -1,0 +1,48 @@
+{{#if resume.work.length}}
+<section>
+  <h2 id="work" class="h3 faded hr">
+    Experience
+    <span class="symbol icon-briefcase"></span>
+  </h2>
+  {{#each resume.work}}
+  <section>
+    <header
+      class="{{#unless @first}}mt3{{/unless}}"
+      property="{{#if endDate.length}}alumniOf{{else}}worksFor{{/if}}"
+      typeof="Organization"
+      >
+      {{#if startDate.length}}
+        <p class="faded">
+          <time datetime="{{startDate}}">{{formattedDate startDate}}</time>
+          –
+          {{#if endDate.length}}
+            <time datetime="{{endDate}}">{{formattedDate endDate}}</time>
+          {{else}}
+            <em>present</em>
+          {{/if}}
+        </p>
+      {{/if}}
+      <h3 class="h4 faded">
+        <meta property="name" content={{name}}/>
+        <span class="bc">{{position}}</span>
+        at {{name}}
+        {{#if endDate.length}}
+          {{> link title=company href=website spanClass="bc" property="sameAs" class=""}}
+        {{else}}
+          {{> link title=company href=website spanClass="bc" property="sameAs" class="org p-org h-card"}}
+        {{/if}}
+      </h3>
+    </header>
+
+    {{> message text=summary alt=" "}}
+
+    <h4 class="sr-only">Highlights</h4>
+    <ul>
+      {{#each highlights}}
+        <li>{{.}}</li>
+      {{/each}}
+    </ul>
+  </section>
+  {{/each}}
+</section>
+{{/if}}

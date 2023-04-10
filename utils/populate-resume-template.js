@@ -19,6 +19,7 @@ const populateResumeTemplate = (body) => {
                 institution: detail.schoolName,
                 studyType: detail.type,
                 endDate: detail.graduationDate,
+                area: detail.details
             }
         })
         ,

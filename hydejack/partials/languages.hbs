@@ -1,0 +1,59 @@
+{{#if resume.languages.length}}
+<section>
+  <h2 id="languages" class="h3 faded hr">
+    Languages
+    <span class="symbol icon-bubbles"></span>
+  </h2>
+  <dl class="skills">
+    {{#each resume.languages}}
+      <dt class="h4 fl">{{language}}</dt>
+      <dd class="faded clearafter">
+        <div class="fr">
+          <span class="sr-only">"Fluency:</span>
+          {{#switch fluency}}
+            {{#case "5" "nativeorbilingualproficiency" "nativespeaker" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-full"></span>
+              </span>
+            {{/case}}
+            {{#case "4" "fullprofessionalproficiency" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-half"></span>
+              </span>
+            {{/case}}
+            {{#case "3" "professionalworkingproficiency" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-full"></span><span class="icon-star-full"></span><span class="icon-star-empty"></span>
+              </span>
+            {{/case}}
+            {{#case "2" "limitedworkingproficiency" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-full"></span><span class="icon-star-half"></span><span class="icon-star-empty"></span>
+              </span>
+            {{/case}}
+            {{#case "1" "elementaryproficiency" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-full"></span><span class="icon-star-empty"></span><span class="icon-star-empty"></span>
+              </span>
+            {{/case}}
+            {{#case "0" "noproficiency" break=true}}
+              <span class="help" title="{{ fluency }}">
+                <span class="sr-only">{{ fluency }}</span>
+                <span class="icon-star-empty"></span><span class="icon-star-empty"></span><span class="icon-star-empty"></span>
+              </span>
+            {{/case}}
+            {{#default}}
+              {{ fluency }}
+            {{/default}}
+          {{/switch}}
+        </div>
+      </dd>
+    {{/each}}
+  </dl>
+</section>
+{{/if}}

@@ -1,0 +1,226 @@
+body {
+	background: #fff;
+	font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
+	line-height: 1.4;
+	margin: 0 0;
+	margin-bottom: 100px;
+}
+em {
+	color: #999;
+}
+p {
+	line-height: 1.6;
+	font-size: 90%;
+}
+
+a {
+	color: #2C85B1;
+	text-decoration: none;
+	font-weight: 400;
+}
+ul {
+	margin-bottom: 0;
+}
+section {
+}
+blockquote {
+	margin: 0;
+}
+#resume {
+	padding: 2em 2em 2em 2.5em;
+	min-width: 100vw;
+}
+
+/* Resume heading */
+.heading header {
+
+}
+
+.heading header h1 {
+	font-size: 180%;
+	margin: 0.5em 0;
+	font-weight: 600;
+}
+
+.heading header h1, .heading header h2 {
+	display: inline !important;
+    padding-right: 20px;
+}
+
+.heading header h2 {
+	font-weight: 300;
+	font-size: 30px;
+	margin: 0;
+}
+
+.vr {
+    display: inline;
+    margin: 0.5em 0px;
+    width: 1px;
+    height: 1em;
+    border-left: 1px solid gray;
+}
+
+.heading header h2.label {
+	margin-bottom: 0.5em;
+}
+
+.heading header .contact {
+	margin-top: 2em;
+}
+
+.heading header .contact .detail {
+	margin: 0 1em 0 0;
+}
+
+.profile {
+	display: inline-block;
+	margin: 0 1em 0 0;
+}
+
+.profile strong,
+.profile span {
+	display: inline-block;
+	margin: 0 1em 0 0;
+}
+/* section / line breaks */
+section h2 {
+	font-size: 1rem;
+	text-transform: uppercase;
+	color: #BC1B39;
+	font-weight: 400;
+}
+
+/* Experience items */
+.item {
+}
+
+.item:last-child {
+	border-bottom: none;
+}
+
+
+.item header h3 {
+	font-weight: 600;
+}
+
+.item header a {
+	display: inline-block;
+}
+
+.item .position {
+	font-weight: 600;
+	font-size: 100%;
+	margin: 0.2em 1em 0.2em 0;
+}
+
+.item .startDate,
+.item .endDate {
+	color: #6B6B6B;
+}
+
+.item .highlights {
+	list-style: square;
+	font-size: 90%;
+}
+
+/* skills */
+
+.skills_container,
+.interests_container,
+.languages_container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 1rem;
+}
+
+.interests_container .item {
+	font-weight: bold;
+}
+
+.languages_container .item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+#skills .item {
+	margin: 0.5em 0;
+	padding: 0 0 0.5em;
+	font-size: 90%;
+}
+
+#skills .item .name {
+	font-weight: 600;
+	display: inline-block;
+	text-transform: capitalize;
+	vertical-align: top;
+}
+
+#skills .item .keywords {
+	display: inline-block;
+	width: 70%;
+	vertical-align: top;
+}
+
+/* education */
+.education_container {
+	min-width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 1rem;
+}
+
+.education_container .item {
+	margin: 0;
+	padding: 0;
+	min-width: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.education_detail {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.education_item-name {
+	font-weight: bold;
+}
+
+.education_container .item header  {
+	margin: 0;
+	padding: 0;
+}
+
+.references_container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	gap: 1rem;
+}
+
+
+.reference_item_break {
+	min-height: 100%;
+	width: 2px;
+	background: #BC1B39;
+	position: relative;
+}
+
+.item {
+	page-break-inside: avoid;
+}

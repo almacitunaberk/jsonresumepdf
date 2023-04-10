@@ -1,0 +1,24 @@
+{{#if resume.languages.length }}
+<div id="skills" class="col-md-12">
+	<hr class="col-md-9 col-md-offset-3" />
+	<div class="container-fluid no-break">
+		<div class="row">
+			<div class="col-md-3">
+				<h3>Languages</h3>
+			</div>
+			<div class="col-md-9 languages_container">
+			{{#each resume.languages}}
+				<div class="languages_item">
+						<h4 class="language">
+							{{language}}
+						</h4>
+                        <h5 class="fluency">
+                            {{fluency}}
+                        </h5>
+				</div>
+			{{/each}}
+			</div>
+		</div>
+	</div>
+</div>
+{{/if}}

@@ -1,0 +1,16 @@
+{{#if resume.languages.length}}
+  <div id='languages' class='section-block'>
+    <div class='section-intro'>
+      <div class='section-name'>
+        <span>LANGUAGES</span>
+      </div>
+      <div class='section-intro-line'></div>
+    </div>
+    <div class='section-content' id="languages_list">
+        {{#each resume.languages}}
+            <span class='title'>{{language}}: {{fluency}}</span>
+        {{/each}}
+    </div>
+  </div>
+  <div class='section-line'></div>
+{{/if}}

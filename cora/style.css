@@ -1,0 +1,289 @@
+body {
+    font-family: Montserrat;
+    color: #333333;
+}
+
+.picture {
+    border-radius: 3%;
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+a {
+    color: #333333;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #4e4e4e;
+}
+
+a:hover {
+    color: #4e4e4e;
+    text-decoration: underline;
+}
+
+header {
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h1 {
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    margin-top: 2em;
+    margin-bottom: 0.2em;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h4 {
+    color: #4e4e4e;
+    margin-top: 0;
+}
+
+.profile {
+    font-family: Montserrat;
+    white-space:nowrap;
+    margin: 0.5em;
+}
+
+.contact-header {
+    font-weight: bold;
+    color: #4e4e4e;
+    margin:1em;
+}
+
+.contact-header .fa {
+}
+
+.profile .fa {
+}
+
+.label {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.fa {
+}
+
+.left {
+}
+
+.languages_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.interests_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+.languages_item {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.main {
+    margin: 0 auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 50px;
+}
+
+.skills_container {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+p {
+    font-family: 'Open Sans';
+}
+
+li {
+    font-family: 'Open Sans';
+}
+
+.keywords {
+    background-color: #333333;
+    color: #fff;
+    padding: 6px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+blockquote {
+    margin: 2em 10px;
+    padding: 1em 10px;
+    border-left: 10px solid #edf0f5;
+    font-family: 'Open Sans';
+}
+
+blockquote .name {
+    font-weight: bold;
+    font-family: "Montserrat";
+}
+
+.responsive-show {
+    display: none;
+}
+
+.address {
+    display: block
+}
+
+section.skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.references_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.references_item {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.references_break {
+    min-height: 100%;
+    width: 2px;
+    background: #333333;
+}
+
+.reference_name {
+    font-weight: bold;
+}
+
+@page {
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+}
+
+@page:first {
+    margin-top: 0;
+}
+
+#awards,
+.item {
+    page-break-inside: avoid;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+    }
+    h2 {
+    }
+}
+
+@media screen and (max-width: 500px) {
+    p {
+
+    }
+    li {
+
+    }
+    blockquote {
+
+    }
+    h2 {
+
+    }
+    .responsive-hidden {
+        display: none;
+        visibility: hidden;
+    }
+    .responsive-show {
+        display: inline;
+        visibility: visible;
+    }
+}
+
+@media print {
+
+    body {
+
+    }
+
+    .address {
+        display: inline-block
+    }
+
+    .profile {
+
+        display: inline-block
+    }
+
+    #profiles .contact-header {
+        display: none;
+    }
+
+    #languages,
+    #interests {
+        display: none;
+    }
+
+    section.skills section {
+        margin-right: 10em
+    }
+
+    .skills{
+        page-break-inside: avoid;
+    }
+
+    .main{
+        padding:10px;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    section:not(#work) {
+        page-break-inside: avoid;
+    }
+
+    .job {
+        page-break-inside: avoid;
+    }
+
+    @page
+    {
+        size: auto;   /* auto is the initial value */
+        /* this affects the margin in the printer settings */
+        margin: 25mm 10mm;
+    }
+}

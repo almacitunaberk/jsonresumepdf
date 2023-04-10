@@ -1,0 +1,20 @@
+{{#if resume.references.length}}
+<div class="no-break">
+    {{> title value="References" icon="fas fa-asterisk"}}
+    <div class="container references-container no-break">
+    {{#each resume.references}}
+        <section class="clearfix references_item">
+            {{#if name}}
+                <span class="reference_name">{{name}}</span>
+            {{/if}}
+            {{#if reference}}
+            <div class="reference_contact-container">
+                <i class="fa fa-quote-left reference_icon" aria-hidden="true"></i>
+                <span class="reference_contact-span">{{reference}}</span>
+            </div>
+            {{/if}}
+        </section>
+    {{/each}}
+    </div>
+</div>
+{{/if}}

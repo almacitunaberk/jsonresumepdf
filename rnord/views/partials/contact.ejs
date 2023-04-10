@@ -1,0 +1,43 @@
+<%
+/**
+ * @typedef {object} Contact
+ * @property {string} email Contact email
+ * @property {string} phone Contact phone number
+ * @property {string} website Contact website
+ *
+ * [Section] Contact
+ * @param {Contact} contact
+ */
+%>
+
+<% if (contact) { %>
+  <section id="contact" class="row">
+    <aside class="col-sm-3"><h3>Contact</h3></aside>
+    <div class="col-sm-9">
+      <div class="contact_container">
+        <% if (contact.email) { %>
+          <div class="contact_item">
+            <strong>Email</strong>
+            <div>
+              <a href="mailto:<%= contact.email %>"><%= contact.email %></a>
+            </div>
+          </div>
+        <% } %>
+        <% if (contact.phone) { %>
+          <div class="contact_item">
+            <strong>Phone</strong>
+            <div class="phone"><%= contact.phone %></div>
+          </div>
+        <% } %>
+        <% if (contact.website) { %>
+          <div class="contact_item">
+            <strong>Website</strong>
+            <div>
+              <a target="_blank" href="<%= contact.website %>"><%= contact.website %></a>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
+<% } %>

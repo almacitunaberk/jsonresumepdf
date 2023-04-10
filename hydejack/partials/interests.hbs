@@ -1,0 +1,21 @@
+{{#if resume.interests.length}}
+<section>
+  <h2 id="interests" class="h3 faded hr">
+    Interests
+    <span class="symbol icon-heart"></span>
+  </h2>
+  <dl class="skills skills_container">
+    {{#each resume.interests}}
+      <dt class="h4 skills_item">{{name}}</dt>
+      <dd>
+        <span class="sr-only">Keywords:</span>
+        <ul class="tags">
+          {{#each keywords}}
+            <li class="tag">{{.}}</li>
+          {{/each}}
+        </ul>
+      </dd>
+    {{/each}}
+  </dl>
+</section>
+{{/if}}

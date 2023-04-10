@@ -1,0 +1,29 @@
+{{#if resume.certificates.length}}
+  <div id='publications' class='section-block'>
+    <div class='section-intro'>
+      <div class='section-name'>
+        <span>CERTIFICATES</span>
+      </div>
+      <div class='section-intro-line'></div>
+    </div>
+    <div class='section-content'>
+      {{#each resume.certificates}}
+        <div class='block-header'>
+          <span class='title'>{{name}}</span>
+          {{#if date}}
+            <span class='date'>
+              <time datetime="{{date}}">{{MONTH_YEAR date}}</time>
+            </span>
+          {{/if}}
+        </div>
+        {{#if issuer}}
+          <div class='website'>{{issuer}}</div>
+        {{/if}}
+        {{#unless @last}}
+          <div class='separator'></div>
+        {{/unless}}
+      {{/each}}
+    </div>
+  </div>
+  <div class='section-line'></div>
+{{/if}}

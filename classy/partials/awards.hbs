@@ -1,0 +1,13 @@
+{{#if resume.certificates.length}}
+<section id="awards">
+	<h2><i class="fa fa-trophy left"></i> CERTIFICATES</h2>
+	{{#each resume.certificates}}
+	<h3>{{name}} - {{issuer}}</h3>
+	{{#if date}}
+	<h4>
+		{{date}}
+	</h4>
+	{{/if}}
+	{{/each}}
+</section>
+{{/if}}

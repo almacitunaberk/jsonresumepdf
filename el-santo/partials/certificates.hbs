@@ -1,0 +1,19 @@
+{{#if resume.certificates.length}}
+    <div class="sectionBlock">
+        <div class='sectionContent'>
+            <span class='sectionName'>CERTIFICATES</span>
+            {{#each resume.certificates}}
+                <div class='blockHeader'>
+                    <b>{{#if name}} - {{name}}{{/if}}</b>
+                    {{#if date}}
+                    <div class='date'>
+                        {{{date}}}
+                    </div>
+                    {{/if}}
+                </div>
+                {{#if issuer}}{{issuer}}{{/if}}
+            {{/each}}
+        </div>
+    </div>
+{{/if}}
+
