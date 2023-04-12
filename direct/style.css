@@ -158,6 +158,7 @@ section .website, section .date{
 
 @page {
     margin-top: 1cm;
+    margin-bottom: 1cm;
 }
 
 @page:first {

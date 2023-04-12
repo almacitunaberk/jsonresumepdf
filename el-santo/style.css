@@ -177,6 +177,15 @@ p {
     font-weight: bold;
 }
 
+@page {
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+}
+
+@page:first {
+    margin-top: 0;
+}
+
 
 @media print {
     body {

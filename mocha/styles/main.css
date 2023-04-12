@@ -249,6 +249,12 @@ ul.two-column li {
 .summary {
     margin: 5px 0 5px; }
 
+@page {
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+}
+
+
 /* Layouts */
 .page {
     background: #222831;

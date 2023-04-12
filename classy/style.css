@@ -181,7 +181,9 @@ section.skills {
     margin-right: 1rem;
 }
 
-
+.no-break {
+    page-break-inside: avoid;
+}
 
 @page {
     margin-top: 1cm;

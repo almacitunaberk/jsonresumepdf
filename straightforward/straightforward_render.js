@@ -42,6 +42,7 @@ Handlebars.registerHelper('IF_DATES_HAVE_SAME_MONTH_AND_YEAR', function (arg1, a
 Handlebars.registerHelper('join', (arr, separator) =>
   arr.join(typeof separator === 'string' ? separator : ', '),
 )
+
 Handlebars.registerHelper('STATE_ABBREVIATION_TO_FULL_NAME', (state) => {
   const stateList = {
     AZ: 'Arizona',

@@ -4,10 +4,10 @@ const createPdf = require("../create-pdf.js")
 const router = express.Router()
 
 const THEMES = [ "kendall", "autumn", "straightforward",
-                "eloquent-mod", "stackoverflow", "flat", "srt",
+                "stackoverflow", "flat", "srt",
                 "contempo", "fresh", "direct", "compact-extended",
-                "spartacus-prime", "slickoverflow", "moon", "el-santo",
-                "short", "cora", "classy", "dinesh", "rnord", "concise-serif",
+                "slickoverflow", "el-santo","short",
+                "cora", "classy", "dinesh", "rnord", "concise-serif",
                 "hydejack", "mocha"]
 
 

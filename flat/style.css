@@ -144,12 +144,13 @@ h4 span:first-child {
 	page-break-inside: avoid;
 }
 
-@page:first {
-	margin-top: 0;
+@page {
+	margin-top: 1cm;
+	margin-bottom: 1cm;
 }
 
-@page {
-	margin-top: 50px;
+@page:first {
+	margin-top: 0;
 }
 
 

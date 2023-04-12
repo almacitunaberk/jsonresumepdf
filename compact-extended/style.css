@@ -141,3 +141,19 @@ hr {
 .references_name {
     font-weight: bold;
 }
+
+@page {
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+}
+
+@page:first {
+    margin-top: 0;
+}
+
+.basics_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

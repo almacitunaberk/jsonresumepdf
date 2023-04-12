@@ -5,8 +5,8 @@ body {
 	font-family: Lato, sans-serif;
 	font-weight: 300;
 	color: #2E3440;
-	margin: 0 0 80px;
 	font-size: 15px;
+	margin: 0 0 80px;
 }
 
 ::selection {
@@ -172,6 +172,13 @@ h4 span:first-child {
 
 .no-break {
 	page-break-inside: avoid;
+}
+
+@page {
+	margin-top: 1cm;
+	margin-bottom: 1cm;
+	margin-right: 1cm;
+	margin-left: 1cm;
 }
 
 .contact_container,

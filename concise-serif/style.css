@@ -159,6 +159,13 @@ hr {
 	page-break-inside: avoid;
 }
 
+@page {
+	margin-right: 1cm;
+	margin-left: 1cm;
+	margin-top: 1cm;
+	margin-bottom: 1cm;
+}
+
 
 /****************
 *		MOBILE

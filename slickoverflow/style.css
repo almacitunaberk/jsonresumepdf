@@ -579,8 +579,16 @@ section .location {
   width: 10em;
 }
 
+#references {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 #references .item {
   padding-left: 0.5em;
+  margin-right: 1rem;
 }
 
 .toggle-item {
@@ -794,4 +802,14 @@ section .location {
   .fa-map-marker-alt:before {
     padding-left: 0.1em;
   }
+}
+
+
+@page {
+  margin-top: 1cm;
+  margin-bottom: 1cm;
+}
+
+@page:first {
+  margin-top: 0;
 }

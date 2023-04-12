@@ -2,6 +2,7 @@
 <section id="education">
 	<h2><i class="fa fa-graduation-cap left"></i> EDUCATION</h2>
 	{{#each resume.education}}
+	<div class="no-break">
 	<h3>{{studyType}}, {{area}} - {{institution}}</h3>
 	<h4>{{startDate}} {{#if endDate}} - {{endDate}} {{else}} - Present {{/if}} {{#if gpa}}<br> GPA: {{gpa}} {{/if}}
 	</h4>
@@ -12,6 +13,8 @@
 		<li>{{.}}</li>
 		{{/each}}
 	</ul>
-	{{/if}} {{/each}}
+	{{/if}}
+	</div>
+	{{/each}}
 </section>
 {{/if}}

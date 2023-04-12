@@ -160,8 +160,9 @@ blockquote {
 
 @page {
 	margin-top: 1cm;
-}
+	margin-bottom: 1cm;
+  }
 
-@page:first {
+  @page:first {
 	margin-top: 0;
-}
+  }

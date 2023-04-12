@@ -620,6 +620,8 @@ section .location {
   }
 }
 
+
+
 /****************
 *		LAPTOP
 ****************/
@@ -782,4 +784,14 @@ section .location {
   .fa-map-marker-alt:before {
     padding-left: 0.1em;
   }
+}
+
+
+@page {
+  margin-top: 1cm;
+  margin-bottom: 1cm;
+}
+
+@page:first {
+  margin-top: 0;
 }

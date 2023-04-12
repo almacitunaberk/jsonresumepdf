@@ -442,6 +442,21 @@ h6[id] > .permalink:focus {
   opacity: 1;
   transition: opacity 200ms;
 }
+
+@page {
+  margin-top: 1cm;
+  margin-bottom: 1cm;
+}
+
+@page:first {
+  margin-top: 0;
+}
+
+.no-break {
+  page-break-inside: avoid;
+}
+
+
 @media print {
   h1,
   h2,
