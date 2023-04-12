@@ -1,7 +1,7 @@
 {{#resume.basics}}
 	<section>
     {{#if location}}
-      {{> icon-tag icon="map-marker" text=(formatAddress location) title="Location" url=""}}
+      {{> icon-tag icon="map-marker" text=location.address title="Location" url=""}}
     {{/if}}
     {{#if email}}
       {{> icon-tag icon="envelope" text=email title="E-mail" url=""}}

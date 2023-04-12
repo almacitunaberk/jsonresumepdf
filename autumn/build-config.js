@@ -40,23 +40,9 @@ module.exports = {
       return args.slice(0, -1);
     },
     formatAddress: function (location) {
-      const { address, city, region, countryCode, postalCode } = location;
-      let text = '';
-      /**
-       * I prefer to only list the city, region and country, but if you want to
-       * show the whole address just uncomment  the lines for each address part.
-       */
-      //if (address) text += `${address}, `;
-      if (city) text += city;
-      if (region) text += `, ${region}`;
-      if (countryCode) {
-        const found = lookup.byIso(countryCode);
-        if (found) {
-          text += `, ${found.country}`;
-        }
-      }
-      // if (postalCode) text += `, ${postalCode}`;
-      return text;
+      const { address  } = location;
+      console.log(address)
+      return address
     },
     formatDate: function (string) {
       const date = new Date(`${string} 00:00:01`);
