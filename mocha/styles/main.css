@@ -254,6 +254,10 @@ ul.two-column li {
     margin-bottom: 1cm;
 }
 
+@page:first {
+    margin-top: 0;
+}
+
 
 /* Layouts */
 .page {
