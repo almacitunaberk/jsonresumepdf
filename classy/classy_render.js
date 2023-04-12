@@ -5,6 +5,7 @@ var Handlebars = require('handlebars');
 var schema = require('../resume_schema.js');
 var dateFormat = require('dateformat');
 
+
 var resumeObject = schema.resumeJson;
 
 function render(resumeObject) {
@@ -60,12 +61,13 @@ function render(resumeObject) {
 		}
 	}
 
-	if (resumeObject.awards && resumeObject.awards.length > 0) {
-		if (resumeObject.awards[0].title) {
+	if (resumeObject.certificates && resumeObject.certificates.length > 0) {
+		if (resumeObject.certificates[0].title) {
 			resumeObject.awardsBool = true;
-			_.each(resumeObject.awards, function (a) {
-				if(a.date)
-				a.date = dateFormat(new Date(a.date), "yyyy-mmm");
+			_.each(resumeObject.certificates, function (a) {
+				if(a.date) {
+					a.date = dateFormat(new Date(a.date), "yyyy-mmm");
+				}
 			});
 		}
 	}
@@ -73,8 +75,9 @@ function render(resumeObject) {
 	if (resumeObject.publications && resumeObject.publications.length > 0) {
 		if (resumeObject.publications[0].name) {
 			_.each(resumeObject.publications, function (a) {
-				if(a.date)
-				a.date = dateFormat(new Date(a.date), "yyyy-mmm");
+				if(a.date) {
+					a.date = dateFormat(new Date(a.date), "yyyy-mmm");
+				}
 			});
 		}
 	}
